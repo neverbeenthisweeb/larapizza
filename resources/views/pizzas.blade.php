@@ -1,27 +1,27 @@
 <!DOCTYPE html>
 <html>
-   <body>
-      <h1>Pizzas</h1>
-      <p>WML with this Laravel OwO.</p>
-      <p>Type: {{ $type }}</p>
-      <p>Base: {{ $base }}</p>
-      <p>Price: ${{ $price }}</p>
+    <body>
+        <h1>Pizzas</h1>
+        <p>WML with this Laravel OwO.</p>
 
-      @if($price > 15)
-        <p>This pizza is expensive!</p>
-      @elseif($price < 5)
-        <p>This pizza is affordable.</p>
-      @else
-        <p>This pizza is so so.</p>
-      @endif
+        <!-- @for($i = 0; $i < 5; $i++)
+            <p>The value of i is {{ $i }}</p>
+        @endfor -->
 
-      @unless($base == 'Beef')
-        <p>You don't have a Beef Pizza!</p>
-      @endunless
+        <!-- @for($i = 0; $i < count($pizzas); $i++)
+          <p>{{ $pizzas[$i]['type'] }}</p>
+        @endfor -->
 
-      @php
-        $name = 'Rafi';
-        echo $name;
-      @endphp
-   </body>
+        @foreach($pizzas as $pizza)
+        <div>
+            {{ $loop->index }} {{ $pizza['type'] }} - {{ $pizza['base'] }}
+            @if($loop->first)
+                <span>- First in the loop!</span>
+            @endif
+            @if($loop->last)
+                <span>- Last in the loop!</span>
+            @endif
+        </div>
+        @endforeach
+    </body>
 </html>
