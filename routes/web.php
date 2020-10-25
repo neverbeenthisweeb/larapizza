@@ -24,5 +24,9 @@ Route::get('/pizzas', function () {
         ['type' => 'American', 'base' => 'Creamy'],
         ['type' => 'Asian', 'base' => 'Meat']
     ];
-    return view('pizzas', ['pizzas' => $pizzas]);
+    return view('pizzas', [
+        'pizzas' => $pizzas,
+        'name' => request('name'),
+        'gender' => request('gender')
+    ]);
 });
