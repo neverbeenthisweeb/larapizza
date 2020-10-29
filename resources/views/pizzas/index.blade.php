@@ -4,7 +4,7 @@
 <p>WML with this Laravel OwO.</p>
 @foreach($pizzas as $pizza)
 <div>
-  <a href="/pizzas/{{ $pizza->id }}">{{ $pizza->name }}</a>
+  <a href="/pizzas/{{ $pizza->id }}">[{{ $pizza->id }}] {{ $pizza->name }}</a>
 </div>
 @endforeach
 <a href="/pizzas/create">Create a pizza</a>

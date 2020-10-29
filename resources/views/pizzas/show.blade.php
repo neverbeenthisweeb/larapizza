@@ -8,5 +8,10 @@
         <li>{{ $topping }}</li>
     @endforeach
 </ul>
+<form action="/pizzas/{{ $pizza->id }}" method="POST">
+    @csrf
+    @method("DELETE")
+    <button>Complete order</button>
+</form>
 <a href="/pizzas" class="back"><<= Back to all pizzas</a>
 @endsection
