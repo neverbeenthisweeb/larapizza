@@ -17,6 +17,12 @@
         <option value="cheesy">Cheesy</option>
         <option value="rust">Rust</option>
     </select>
+    <fieldset>
+        <label>Extra toppings:</label>
+        <input type="checkbox" name="toppings[]" value="mushroom">Mushroom<br />
+        <input type="checkbox" name="toppings[]" value="oreo">Oreo<br />
+        <input type="checkbox" name="toppings[]" value="cheese">Cheese<br />
+    </fieldset>
     <input type="submit" value="Order Pizza">
 </form>
 @endsection
