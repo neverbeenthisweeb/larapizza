@@ -1,11 +1,15 @@
 @extends('layouts.layout')
+
 @section('content')
-<h1>Pizzas</h1>
-<p>WML with this Laravel OwO.</p>
-@foreach($pizzas as $pizza)
-<div>
-  <a href="/pizzas/{{ $pizza->id }}">[{{ $pizza->id }}] {{ $pizza->name }}</a>
+<div class="wrapper pizza-index">
+  <h1>Pizza Orders</h1>
+  @foreach($pizzas as $pizza)
+    <div class="pizza-item">
+      <img src="/img/pizza.png" alt="pizza icon">
+      <h4><a href="/pizzas/{{ $pizza->id }}">{{ $pizza->name }}</a></h4>
+    </div>
+  @endforeach
+
 </div>
-@endforeach
-<a href="/pizzas/create">Create a pizza</a>
+
 @endsection
