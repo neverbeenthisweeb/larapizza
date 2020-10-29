@@ -12,13 +12,18 @@ class PizzaController extends Controller
         // $pizzas = Pizza::orderBy('base', 'desc')->get();
         // $pizzas = Pizza::where('type', 'jelly')->get();
         $pizzas = Pizza::latest()->get();
-        return view('pizzas', [
+        return view('pizzas.index', [
             'pizzas' => $pizzas,
         ]);
     }
 
     public function show($id) {
         // use the $id variable to query the DB for a record
-        return view('details', ['id' => $id]);
+        return view('pizzas.show', ['id' => $id]);
+    }
+
+    public function create() {
+        // use the $id variable to query the DB for a record
+        return view('pizzas.create');
     }
 }
