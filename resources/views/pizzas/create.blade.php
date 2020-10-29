@@ -4,6 +4,7 @@
 <p>WML with this Laravel OwO.</p>
 <h2>Create a new pizza!</h2>
 <form action="/pizzas" method="POST">
+    @csrf
     <label for="name">Your name:</label>
     <input type="text" id="name" name="name">
     <label for="type">Choose pizza type:</label>

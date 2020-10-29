@@ -25,4 +25,11 @@ class PizzaController extends Controller
         // use the $id variable to query the DB for a record
         return view('pizzas.create');
     }
+
+    public function store() {
+        error_log(request('name'));
+        error_log(request('type'));
+        error_log(request('base'));
+        return redirect('/');
+    }
 }
