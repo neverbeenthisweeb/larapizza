@@ -10,6 +10,10 @@ run-mysql:
 	@echo "## Running larapizza-mysql"
 	@docker run --rm -d -e MYSQL_DATABASE=pizzahouse -e MYSQL_ALLOW_EMPTY_PASSWORD=1 --name larapizza-mysql -p 3344:3306 --env-file .env mysql:5.7
 
+prep-mysql:
+	@echo "## Preparing MySQL"
+	@php artisan migrate:refresh --seed
+
 infra-down:
 	@echo "## Shutting Down Infrastructures"
 	@-docker kill larapizza-mysql
